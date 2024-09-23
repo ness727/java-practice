@@ -9,7 +9,8 @@ public class Main {
     }
 
     private static void sort(int[] arr) {
-        quickSort(arr, 0, arr.length - 1);
+        //quickSort(arr, 0, arr.length - 1);
+        insertionSort(arr);
     }
 
     private static void quickSort(int[] arr, int start, int end) {
@@ -34,5 +35,18 @@ public class Main {
 
         quickSort(arr, start, right);
         quickSort(arr, left + 1, end);
+    }
+
+    // 삽입 정렬
+    private static void insertionSort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = i - 1; j >= 0; j--) {
+                if (arr[j + 1] < arr[j]) {
+                    int temp = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = temp;
+                } else break;
+            }
+        }
     }
 }
