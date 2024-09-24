@@ -10,9 +10,11 @@ public class Main {
 
     private static void sort(int[] arr) {
         //quickSort(arr, 0, arr.length - 1);
-        insertionSort(arr);
+        //insertionSort(arr);
+        bubbleSort(arr);
     }
 
+    // 퀵 정렬
     private static void quickSort(int[] arr, int start, int end) {
         if (end < start) return;
         int left = start, right = end - 1, pivot = end;
@@ -46,6 +48,19 @@ public class Main {
                     arr[j + 1] = arr[j];
                     arr[j] = temp;
                 } else break;
+            }
+        }
+    }
+
+    // 버블 정렬
+    private static void bubbleSort(int[] arr) {
+        for (int i = arr.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = temp;
+                }
             }
         }
     }
