@@ -17,7 +17,6 @@ public class Main {
     private static void fibo2() {
         int[] result = new int[11];
         result[1] = 1;
-        result[2] = 1;
 
         for (int i = 2; i < 11; i++)
             result[i] = result[i - 2] + result[i - 1];
